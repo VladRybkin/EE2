@@ -17,7 +17,7 @@ import java.sql.SQLException;
 public class PinConnection {
     static {
         try {
-            Class.forName("org.postgresl.Driver");
+            Class.forName("org.postgresql.Driver");
         } catch ( ClassNotFoundException e){
             e.printStackTrace();
             System.exit(-1);
@@ -25,7 +25,11 @@ public class PinConnection {
     }
 
     public static void main(String[] args) throws SQLException {
+        System.out.println(System.getProperty("User")+" "+System.getProperty("Password"));
+        String URL="jdbc:postgresql://localhost:5432/goitbase";
+        String Login ="postgres";
+        String Password="19071993";
+        Connection connection = DriverManager.getConnection(URL, Login, Password);
 
-        Connection connection = DriverManager.getConnection("URL", "Login","Password");
     }
 }
