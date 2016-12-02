@@ -29,7 +29,8 @@ public class PinConnection {
         String URL="jdbc:postgresql://localhost:5432/goitbase";
         String Login ="postgres";
         String Password="19071993";
-        Connection connection = DriverManager.getConnection(URL, Login, Password);
+        Connection connection = DriverManager.getConnection(URL, System.getProperty("User"), System.getProperty("Password"));
+        connection.close();
 
     }
 }
